@@ -5,8 +5,7 @@ ctx.font = "15px Arial";
 canvas.width = "620";
 canvas.height = "150";
 
-document.querySelector("button").disabled = true;
-
+generateColors();
 
 //called when user clicks on add color Button 
 //adds a new color picker to the page
@@ -24,9 +23,6 @@ function removeColor() {
 
 
 
-//if the colorpickers are clicked the generateColors function is called
-document.querySelector("body").addEventListener("change", generateColors);
-
 //paints white background
 function paintBackground() {
     ctx.beginPath();
@@ -36,7 +32,6 @@ function paintBackground() {
 
 //generate colors and call newColor function
 function generateColors() {
-    document.querySelector("button").disabled = false;
     let colors = document.querySelectorAll(".colorPicker");
     let lines = Math.ceil(document.querySelectorAll(".colorPicker").length / 5);
     let index = 0;
@@ -75,6 +70,7 @@ function newColor(width, height, x, y, color, textWidth, textHeight) {
 
 //download canvas as image
 function downloadCanvas() {
+    generateColors();
     let link = document.createElement("a");
     link.download = "colorPalette.png";
     link.href = canvas.toDataURL("image/png");
