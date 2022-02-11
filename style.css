@@ -1,30 +1,147 @@
+* {
+  font-family: "Arial";
+}
+
 body {
-    background-color: #121213;
-    color: #D7DADC;
+  background-color: #121213;
+  color: #d7dadc;
 }
 .content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50vw;
-    
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 2vw;
+  width: 50vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 2vw;
+  margin: 0 25vw;
+  padding: 16vh 0;
 }
 
 #canvas {
-    display: none;
+  display: none;
 }
 
-.colorPicker {
-    width: 8vw;
-    height: 8vw;
+.color-picker {
+  width: 8vw;
+  height: 8vw;
+  background-color: transparent;
+  /* border: 2px solid white; */
+  border-radius: 2px;
+  color: transparent;
 }
 
-.buttons{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1vw;
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #121213;
+  width: 100%;
+  padding: 4vh 0;
+}
+
+.normal-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 304px;
+  color: white;
+  padding: 1vh 2vw;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.normal-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.pop-up-layout {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.pop-up {
+  background-color: #121213;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #d7dadc;
+  padding: 4vh 4vw;
+  z-index: 11;
+}
+
+.pop-up-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3vh;
+  gap: 5vw;
+}
+
+.color-layout {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.remove-button-layout {
+  position: absolute;
+  top: -25px;
+  right: -16px;
+  margin: 0;
+  background-color: red;
+  border: none;
+  border-radius: 1.5vw;
+  color: white;
+  padding: 0;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remove-button-layout:hover {
+  animation: wiggle 3s infinite ease-in-out;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  15% {
+    transform: rotate(10deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.remove-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  transition: all 0.2s ease-in-out;
 }

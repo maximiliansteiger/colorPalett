@@ -11,22 +11,24 @@
 </head>
 
 <body>
-    <div class="content" id="colorPickerDiv">
+    <div class="pop-up-layout">
+        <div class="pop-up">
+            <h3>Do you really want to generate random colors and delete all existing ones?</h3>
+            <div class="pop-up-buttons">
+                <button class="normal-btn" onclick="triggerPopUpEvent();changePopUp(false)" id="yes">Yes</button>
+                <button class="normal-btn" onclick="changePopUp(false)" id="no">No</button>
+            </div> 
+        </div>
+    </div>
 
-        <input type="color" value="#A72F2F" class="colorPicker">
-        <input type="color" value="#A72F2F" class="colorPicker">
-        <input type="color" value="#A72F2F" class="colorPicker">
-        <input type="color" value="#A72F2F" class="colorPicker">
-        <input type="color" value="#A72F2F" class="colorPicker">
-      
+    <div class="content" id="colorPickerDiv">
     </div>
     <canvas id="canvas"></canvas>
 
     <div class="buttons">
-        <button onclick="downloadCanvas()">Download</button>
-        <br>
-        <button onclick="removeColor()">removeColor</button>
-        <button onclick="addColor()">add color</button>
+        <button class="normal-btn" onclick="downloadCanvas()">Download</button>
+        <button class="normal-btn" onclick="changePopUp(true)">Generate random colors</button>
+        <button class="normal-btn" onclick="addColor()">Add color</button>
     </div>
 
 
