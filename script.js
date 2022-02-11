@@ -18,6 +18,12 @@ function addColor() {
     document.getElementById("colorPickerDiv").appendChild(colorPicker);
 }
 
+function removeColor() {
+    document.getElementById("colorPickerDiv").removeChild(document.querySelector(".colorPicker"));
+}
+
+
+
 //if the colorpickers are clicked the generateColors function is called
 document.querySelector("body").addEventListener("change", generateColors);
 
@@ -68,19 +74,9 @@ function newColor(width, height, x, y, color, textWidth, textHeight) {
 }
 
 //download canvas as image
-function downloadCanvasAsImage() {
-    let canvasImage = document.getElementById('canvas').toDataURL('image/png');
-    let xhr = new XMLHttpRequest();
-    xhr.responseType = 'blob';
-    xhr.onload = function () {
-        let a = document.createElement('a');
-        a.href = window.URL.createObjectURL(xhr.response);
-        a.download = 'colorPalett.png';
-        a.style.display = 'none';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-    };
-    xhr.open('GET', canvasImage);
-    xhr.send();
+function downloadCanvas() {
+    let link = document.createElement("a");
+    link.download = "colorPalette.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
 }
