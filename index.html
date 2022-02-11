@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>colorPalett</title>
+</head>
+
+<body>
+    <div class="content" id="colorPickerDiv">
+
+        <input type="color" value="#A72F2F" class="colorPicker">
+        <input type="color" value="#A72F2F" class="colorPicker">
+        <input type="color" value="#A72F2F" class="colorPicker">
+        <input type="color" value="#A72F2F" class="colorPicker">
+        <input type="color" value="#A72F2F" class="colorPicker">
+      
+    </div>
+    <canvas id="canvas"></canvas>
+
+    <div class="buttons">
+        <button onclick="downloadCanvasAsImage()">Download</button>
+        <br>
+        <button onclick="addColor()">add color</button>
+    </div>
+
+
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
