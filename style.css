@@ -96,8 +96,8 @@ body {
 
 .remove-button-layout {
   position: absolute;
-  top: -1.5vw;
-  right: -1vw;
+  top: -25px;
+  right: -16px;
   margin: 0;
   background-color: red;
   border: none;
@@ -105,8 +105,8 @@ body {
   color: white;
   padding: 0;
   cursor: pointer;
-  height: 3vw;
-  width: 3vw;
+  height: 50px;
+  width: 50px;
   transition: all 0.2s ease-in-out;
   display: flex;
   justify-content: center;
